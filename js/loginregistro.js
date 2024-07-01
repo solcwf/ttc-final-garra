@@ -32,11 +32,11 @@ function register() {
 document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault();
     alert("Seu perfil foi conectado");
-    window.location.href = "../../index.html";
+    window.location.href = "../index.html";
 });
 
 document.getElementById("registerForm").addEventListener("submit", function(event) {
     event.preventDefault();
     alert("Seu perfil foi conectado");
-    window.location.href = "../../index.html";
+    window.location.href = "../index.html";
 });
