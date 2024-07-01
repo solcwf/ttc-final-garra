@@ -890,52 +890,98 @@ color: black;}
 
 
 
-/*-----------------------------------*\
-  #FOOTER
-\*-----------------------------------*/
-
+/* footer */
 .footer {
   background-color: var(--raisin-black);
+  color: var(--battleship-gray);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top;
+}
+
+.footer-top {
+  padding-block-start: 100px;
+  border-block-end: 1px solid var(--onyx);
+}
+
+.footer-top .container {
+  display: grid;
+  gap: 30px;
+}
+
+.footer .logo {
   color: var(--white);
-  font-family: var(--ff-inter);
-  padding-block: 40px;
+  margin-block-end: 10px;
 }
 
-.footer .container {
-  margin-inline: 15px;
-  background-color: var(--eerie-black-3);
-  padding: 20px;
+.footer-text {
+  font-size: var(--fs-6);
+  margin-block-end: 25px;
 }
 
-.footer-list,
-.copyright {
-  max-width: max-content;
-  margin-inline: auto;
+.footer-text .link {
+  display: inline-block;
+  color: var(--portland-orange);
 }
 
-.footer-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 5px 40px;
+.contact-item {
   margin-block-end: 15px;
+  color: var(--white);
+  font-weight: var(--fw-700);
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.footer-link,
-.copyright-link {
-  text-decoration: underline;
+.contact-item ion-icon {
+  flex-shrink: 0;
+  font-size: 22px;
+  color: var(--portland-orange);
+}
+
+.social-list {
+  display: flex;
+  gap: 10px;
+}
+
+.social-link {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 12px;
+  border-radius: 50%;
   transition: var(--transition-1);
 }
 
-.footer-link {  color: var(--white_50); }
-
-:is(.footer-link, .copyright-link):is(:hover, :focus) { 
-  background-color: hsla(0, 0%, 100%, 0.05);
+.social-link:is(:hover, :focus) {
+  background-color: var(--portland-orange);
+  color: var(--white);
 }
 
-.copyright { text-align: center; }
+.footer-list-title {
+  color: var(--white);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-700);
+  padding-block: 10px;
+}
+
+.footer-link {
+  padding-block: 4px;
+  transition: var(--transition-1);
+}
+
+.footer-link:is(:hover, :focus) { color: var(--pistachio); }
+
+.footer-bottom { padding-block: 20px; }
+
+.copyright { margin-block-end: 10px; }
 
 .copyright-link { display: inline-block; }
+
+.footer-bottom .img {
+  width: 100%;
+  max-width: max-content;
+}
+
 
 
 

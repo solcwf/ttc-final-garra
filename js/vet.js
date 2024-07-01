@@ -44,3 +44,15 @@ window.addEventListener("scroll", function () {
   window.scrollY >= 50 ? header.classList.add("active")
     : header.classList.remove("active");
 });
+
+
+//agendar consulta ]
+document.addEventListener('DOMContentLoaded', function() {
+  const btnAgendarConsulta = document.getElementById('btnAgendarConsulta');
+
+  btnAgendarConsulta.addEventListener('click', function() {
+    const telefone = '+5511941383505';
+    const linkTelefone = 'tel:' + telefone;
+    window.location.href = linkTelefone;
+  });
+});
