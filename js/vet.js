@@ -1,22 +1,28 @@
 'use strict';
 
-
-
 /**
- * navbar toggle
+ * Navbar toggle
  */
 
 const navOpenBtn = document.querySelector("[data-nav-open-btn]");
 const navbar = document.querySelector("[data-navbar]");
 const navCloseBtn = document.querySelector("[data-nav-close-btn]");
 
-const navElemArr = [navOpenBtn, navCloseBtn];
+// Verifica se todos os elementos foram encontrados no DOM
+if (navOpenBtn && navbar && navCloseBtn) {
+  // Array de elementos para adicionar o evento de clique
+  const navElemArr = [navOpenBtn, navCloseBtn];
 
-for (let i = 0; i < navElemArr.length; i++) {
-  navElemArr[i].addEventListener("click", function () {
-    navbar.classList.toggle("active");
+  // Adiciona o evento de clique para abrir ou fechar a navegação
+  navElemArr.forEach(function (elem) {
+    elem.addEventListener("click", function () {
+      navbar.classList.toggle("active");
+    });
   });
+} else {
+  console.error("Um dos elementos não foi encontrado no DOM.");
 }
+
 
 /**
  * toggle navbar when click any navbar link
@@ -57,3 +63,30 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  // Array que armazena todas as imagens que devem ser pré-carregadas
+  var images = [
+      "imagem1.jpg",
+      "imagem2.jpg"
+      // Adicione mais imagens conforme necessário
+  ];
+
+  // Contador para acompanhar quantas imagens já foram carregadas
+  var imagesLoaded = 0;
+
+  // Função para verificar se todas as imagens foram carregadas
+  function checkImagesLoaded() {
+      imagesLoaded++;
+      if (imagesLoaded === images.length) {
+          // Todas as imagens foram carregadas, então mostra o conteúdo da página
+          document.getElementById("content").style.display = "block";
+      }
+  }
+
+  // Loop através das imagens e pré-carregá-las
+  for (var i = 0; i < images.length; i++) {
+      var img = new Image();
+      img.onload = checkImagesLoaded;
+      img.src = images[i];
+  }
+});

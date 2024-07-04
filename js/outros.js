@@ -17,28 +17,32 @@ document.getElementById('userButton').addEventListener('click', function() {
   window.location.href = '../garra-master/loginregistro.html';
 });
 
-/**
- * navbar toggle
- */
+//toggler
 
 const navToggler = document.querySelector("[data-nav-toggler]");
 const navbar = document.querySelector("[data-navbar]");
 const navbarLinks = document.querySelectorAll("[data-nav-link]");
 
+// Função para alternar o estado do navbar (abrir/fechar)
 const toggleNavbar = function () {
-  navbar.classList.toggle("active");
-  navToggler.classList.toggle("active");
+ navbar.classList.toggle("active");
+ navToggler.classList.toggle("active");
 }
 
-addEventOnElem(navToggler, "click", toggleNavbar);
+// Adiciona evento de clique ao toggler do navbar
+navToggler.addEventListener("click", toggleNavbar);
 
+// Função para fechar o navbar quando um link é clicado
 const closeNavbar = function () {
-  navbar.classList.remove("active");
-  navToggler.classList.remove("active");
+ navbar.classList.remove("active");
+ navToggler.classList.remove("active");
 }
 
-// Adicionando evento de fechar o navbar para cada link do menu
-addEventOnElem(navbarLinks, "click", closeNavbar);
+// Adiciona evento de clique para fechar o navbar para cada link do menu
+navbarLinks.forEach(function(link) {
+ link.addEventListener("click", closeNavbar);
+});
+
 
 /**
  * active header when window scroll down to 100px
