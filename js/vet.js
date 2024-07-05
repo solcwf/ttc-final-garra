@@ -64,29 +64,29 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  // Array que armazena todas as imagens que devem ser pré-carregadas
-  var images = [
-      "imagem1.jpg",
-      "imagem2.jpg"
-      // Adicione mais imagens conforme necessário
-  ];
+    // Array que armazena todas as imagens que devem ser pré-carregadas
+    var images = [
+        "imagem1.jpg",
+        "imagem2.jpg"
+        // Adicione mais imagens conforme necessário
+    ];
 
-  // Contador para acompanhar quantas imagens já foram carregadas
-  var imagesLoaded = 0;
+    // Contador para acompanhar quantas imagens já foram carregadas
+    var imagesLoaded = 0;
 
-  // Função para verificar se todas as imagens foram carregadas
-  function checkImagesLoaded() {
-      imagesLoaded++;
-      if (imagesLoaded === images.length) {
-          // Todas as imagens foram carregadas, então mostra o conteúdo da página
-          document.getElementById("content").style.display = "block";
-      }
-  }
+    // Função para verificar se todas as imagens foram carregadas
+    function checkImagesLoaded() {
+        imagesLoaded++;
+        if (imagesLoaded === images.length) {
+            // Todas as imagens foram carregadas, então mostra o conteúdo da página
+            document.getElementById("content").style.display = "block";
+        }
+    }
 
-  // Loop através das imagens e pré-carregá-las
-  for (var i = 0; i < images.length; i++) {
-      var img = new Image();
-      img.onload = checkImagesLoaded;
-      img.src = images[i];
-  }
+    // Loop através das imagens e pré-carregá-las
+    for (var i = 0; i < images.length; i++) {
+        var img = new Image();
+        img.onload = checkImagesLoaded;
+        img.src = images[i];
+    }
 });
